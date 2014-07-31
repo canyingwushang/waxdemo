@@ -17,18 +17,11 @@
 		07602302198A747700961998 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07602301198A747700961998 /* Images.xcassets */; };
 		07602321198A751900961998 /* CKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0760231F198A751900961998 /* CKMainViewController.m */; };
 		07602322198A751900961998 /* CKMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07602320198A751900961998 /* CKMainViewController.xib */; };
-		076023BA198A76D100961998 /* hammer in Resources */ = {isa = PBXBuildFile; fileRef = 07602325198A76D100961998 /* hammer */; };
-		076023BB198A76D100961998 /* update-xibs in Resources */ = {isa = PBXBuildFile; fileRef = 07602326198A76D100961998 /* update-xibs */; };
-		076023BC198A76D100961998 /* waxsim in Resources */ = {isa = PBXBuildFile; fileRef = 07602327198A76D100961998 /* waxsim */; };
-		076023BD198A76D100961998 /* compile-stdlib.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0760232A198A76D100961998 /* compile-stdlib.sh */; };
-		076023BE198A76D100961998 /* copy-scripts.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0760232B198A76D100961998 /* copy-scripts.sh */; };
-		076023BF198A76D100961998 /* luac.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760232C198A76D100961998 /* luac.lua */; };
 		076023C0198A76D100961998 /* wax_CGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602330198A76D100961998 /* wax_CGTransform.m */; };
 		076023C1198A76D100961998 /* wax_CGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602333198A76D100961998 /* wax_CGContext.m */; };
 		076023C2198A76D100961998 /* wax_filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602336198A76D100961998 /* wax_filesystem.m */; };
 		076023C3198A76D100961998 /* wax_http.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602339198A76D100961998 /* wax_http.m */; };
 		076023C4198A76D100961998 /* wax_http_connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0760233B198A76D100961998 /* wax_http_connection.m */; };
-		076023C5198A76D100961998 /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = 0760233D198A76D100961998 /* Rakefile */; };
 		076023C6198A76D100961998 /* wax_json.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760233E198A76D100961998 /* wax_json.c */; };
 		076023C7198A76D100961998 /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602345198A76D100961998 /* yajl.c */; };
 		076023C8198A76D100961998 /* yajl_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602346198A76D100961998 /* yajl_alloc.c */; };
@@ -37,7 +30,6 @@
 		076023CB198A76D100961998 /* yajl_gen.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760234E198A76D100961998 /* yajl_gen.c */; };
 		076023CC198A76D100961998 /* yajl_lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602350198A76D100961998 /* yajl_lex.c */; };
 		076023CD198A76D100961998 /* yajl_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602353198A76D100961998 /* yajl_parser.c */; };
-		076023CE198A76D100961998 /* yajl-1.0.9.tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = 07602355198A76D100961998 /* yajl-1.0.9.tar.gz */; };
 		076023CF198A76D100961998 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602357198A76D100961998 /* lapi.c */; };
 		076023D0198A76D100961998 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602359198A76D100961998 /* lauxlib.c */; };
 		076023D1198A76D100961998 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760235B198A76D100961998 /* lbaselib.c */; };
@@ -68,32 +60,6 @@
 		076023EA198A76D100961998 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602387198A76D100961998 /* lvm.c */; };
 		076023EB198A76D100961998 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602389198A76D100961998 /* lzio.c */; };
 		076023EC198A76D100961998 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760238B198A76D100961998 /* print.c */; };
-		076023ED198A76D100961998 /* project.rake in Resources */ = {isa = PBXBuildFile; fileRef = 0760238C198A76D100961998 /* project.rake */; };
-		076023EE198A76D100961998 /* define.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760238F198A76D100961998 /* define.lua */; };
-		076023EF198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602390198A76D100961998 /* init.lua */; };
-		076023F0198A76D100961998 /* enums.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602391198A76D100961998 /* enums.lua */; };
-		076023F1198A76D100961998 /* http.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602393198A76D100961998 /* http.lua */; };
-		076023F2198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602394198A76D100961998 /* init.lua */; };
-		076023F3198A76D100961998 /* number.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602395198A76D100961998 /* number.lua */; };
-		076023F4198A76D100961998 /* string.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602396198A76D100961998 /* string.lua */; };
-		076023F5198A76D100961998 /* table.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602397198A76D100961998 /* table.lua */; };
-		076023F6198A76D100961998 /* autoload.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602399198A76D100961998 /* autoload.lua */; };
-		076023F7198A76D100961998 /* base64.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239A198A76D100961998 /* base64.lua */; };
-		076023F8198A76D100961998 /* bit.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239B198A76D100961998 /* bit.lua */; };
-		076023F9198A76D100961998 /* cache.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239C198A76D100961998 /* cache.lua */; };
-		076023FA198A76D100961998 /* callback.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239D198A76D100961998 /* callback.lua */; };
-		076023FB198A76D100961998 /* frame.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239E198A76D100961998 /* frame.lua */; };
-		076023FC198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239F198A76D100961998 /* init.lua */; };
-		076023FD198A76D100961998 /* pickView.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A0198A76D100961998 /* pickView.lua */; };
-		076023FE198A76D100961998 /* time.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A1198A76D100961998 /* time.lua */; };
-		076023FF198A76D100961998 /* WaxServer.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A2198A76D100961998 /* WaxServer.lua */; };
-		07602400198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A3198A76D100961998 /* init.lua */; };
-		07602401198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A5198A76D100961998 /* init.lua */; };
-		07602402198A76D100961998 /* luamock.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A6198A76D100961998 /* luamock.lua */; };
-		07602403198A76D100961998 /* luaspec.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A7198A76D100961998 /* luaspec.lua */; };
-		07602404198A76D100961998 /* repl.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A8198A76D100961998 /* repl.lua */; };
-		07602405198A76D100961998 /* structs.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A9198A76D100961998 /* structs.lua */; };
-		07602406198A76D100961998 /* waxClass.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023AA198A76D100961998 /* waxClass.lua */; };
 		07602407198A76D100961998 /* wax.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023AC198A76D100961998 /* wax.m */; };
 		07602408198A76D100961998 /* wax_class.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023AE198A76D100961998 /* wax_class.m */; };
 		07602409198A76D100961998 /* wax_gc.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B0198A76D100961998 /* wax_gc.m */; };
@@ -101,8 +67,6 @@
 		0760240B198A76D100961998 /* wax_instance.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B4198A76D100961998 /* wax_instance.m */; };
 		0760240C198A76D100961998 /* wax_server.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B6198A76D100961998 /* wax_server.m */; };
 		0760240D198A76D100961998 /* wax_struct.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B9198A76D100961998 /* wax_struct.m */; };
-		07602411198A777900961998 /* run.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602410198A777900961998 /* run.lua */; };
-		07602414198A789D00961998 /* CKLuaViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602413198A789D00961998 /* CKLuaViewController.lua */; };
 		0760241E198A7ADD00961998 /* main_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602415198A7ADD00961998 /* main_view_bg.png */; };
 		0760241F198A7ADD00961998 /* settings_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602416198A7ADD00961998 /* settings_about.png */; };
 		07602420198A7ADD00961998 /* settings_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602417198A7ADD00961998 /* settings_about@2x.png */; };
@@ -656,6 +620,7 @@
 				076022E2198A747700961998 /* Sources */,
 				076022E3198A747700961998 /* Frameworks */,
 				076022E4198A747700961998 /* Resources */,
+				07602427198A80D600961998 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -699,54 +664,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076023BE198A76D100961998 /* copy-scripts.sh in Resources */,
-				076023F3198A76D100961998 /* number.lua in Resources */,
-				076023FA198A76D100961998 /* callback.lua in Resources */,
-				076023BA198A76D100961998 /* hammer in Resources */,
-				076023BD198A76D100961998 /* compile-stdlib.sh in Resources */,
 				07602302198A747700961998 /* Images.xcassets in Resources */,
-				076023FB198A76D100961998 /* frame.lua in Resources */,
-				076023FC198A76D100961998 /* init.lua in Resources */,
 				07602425198A7ADD00961998 /* settings_rate.png in Resources */,
-				076023F5198A76D100961998 /* table.lua in Resources */,
-				076023ED198A76D100961998 /* project.rake in Resources */,
-				07602411198A777900961998 /* run.lua in Resources */,
-				07602403198A76D100961998 /* luaspec.lua in Resources */,
-				076023F0198A76D100961998 /* enums.lua in Resources */,
 				07602422198A7ADD00961998 /* settings_download@2x.png in Resources */,
 				07602322198A751900961998 /* CKMainViewController.xib in Resources */,
-				07602401198A76D100961998 /* init.lua in Resources */,
-				076023EF198A76D100961998 /* init.lua in Resources */,
-				076023F1198A76D100961998 /* http.lua in Resources */,
-				076023FE198A76D100961998 /* time.lua in Resources */,
-				07602414198A789D00961998 /* CKLuaViewController.lua in Resources */,
-				076023C5198A76D100961998 /* Rakefile in Resources */,
-				076023BB198A76D100961998 /* update-xibs in Resources */,
-				07602405198A76D100961998 /* structs.lua in Resources */,
-				076023F9198A76D100961998 /* cache.lua in Resources */,
 				07602423198A7ADD00961998 /* settings_feedback.png in Resources */,
-				076023F8198A76D100961998 /* bit.lua in Resources */,
-				07602400198A76D100961998 /* init.lua in Resources */,
-				076023F7198A76D100961998 /* base64.lua in Resources */,
-				076023FF198A76D100961998 /* WaxServer.lua in Resources */,
 				07602421198A7ADD00961998 /* settings_download.png in Resources */,
 				07602424198A7ADD00961998 /* settings_feedback@2x.png in Resources */,
-				07602406198A76D100961998 /* waxClass.lua in Resources */,
 				0760241F198A7ADD00961998 /* settings_about.png in Resources */,
-				07602402198A76D100961998 /* luamock.lua in Resources */,
-				07602404198A76D100961998 /* repl.lua in Resources */,
-				076023F4198A76D100961998 /* string.lua in Resources */,
-				076023EE198A76D100961998 /* define.lua in Resources */,
-				076023F6198A76D100961998 /* autoload.lua in Resources */,
-				076023FD198A76D100961998 /* pickView.lua in Resources */,
 				07602420198A7ADD00961998 /* settings_about@2x.png in Resources */,
 				0760241E198A7ADD00961998 /* main_view_bg.png in Resources */,
 				076022F4198A747700961998 /* InfoPlist.strings in Resources */,
-				076023CE198A76D100961998 /* yajl-1.0.9.tar.gz in Resources */,
-				076023F2198A76D100961998 /* init.lua in Resources */,
 				07602426198A7ADD00961998 /* settings_rate@2x.png in Resources */,
-				076023BF198A76D100961998 /* luac.lua in Resources */,
-				076023BC198A76D100961998 /* waxsim in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,7 +693,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "$PROJECT_DIR/wax/lib/build-scripts/compile-stdlib.sh\n$PROJECT_DIR/wax/lib/build-scripts/copy-scripts.sh";
+			shellScript = "$PROJECT_DIR/wax/lib/build-scripts/compile-stdlib.sh";
+		};
+		07602427198A80D600961998 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "$PROJECT_DIR/wax/lib/build-scripts/copy-scripts.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 
