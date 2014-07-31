@@ -1,0 +1,971 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		076022EA198A747700961998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076022E9198A747700961998 /* Foundation.framework */; };
+		076022EC198A747700961998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076022EB198A747700961998 /* CoreGraphics.framework */; };
+		076022EE198A747700961998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 076022ED198A747700961998 /* UIKit.framework */; };
+		076022F4198A747700961998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076022F2198A747700961998 /* InfoPlist.strings */; };
+		076022F6198A747700961998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 076022F5198A747700961998 /* main.m */; };
+		076022FA198A747700961998 /* CKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 076022F9198A747700961998 /* CKAppDelegate.m */; };
+		07602300198A747700961998 /* CKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076022FF198A747700961998 /* CKViewController.m */; };
+		07602302198A747700961998 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07602301198A747700961998 /* Images.xcassets */; };
+		07602321198A751900961998 /* CKMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0760231F198A751900961998 /* CKMainViewController.m */; };
+		07602322198A751900961998 /* CKMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07602320198A751900961998 /* CKMainViewController.xib */; };
+		076023BA198A76D100961998 /* hammer in Resources */ = {isa = PBXBuildFile; fileRef = 07602325198A76D100961998 /* hammer */; };
+		076023BB198A76D100961998 /* update-xibs in Resources */ = {isa = PBXBuildFile; fileRef = 07602326198A76D100961998 /* update-xibs */; };
+		076023BC198A76D100961998 /* waxsim in Resources */ = {isa = PBXBuildFile; fileRef = 07602327198A76D100961998 /* waxsim */; };
+		076023BD198A76D100961998 /* compile-stdlib.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0760232A198A76D100961998 /* compile-stdlib.sh */; };
+		076023BE198A76D100961998 /* copy-scripts.sh in Resources */ = {isa = PBXBuildFile; fileRef = 0760232B198A76D100961998 /* copy-scripts.sh */; };
+		076023BF198A76D100961998 /* luac.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760232C198A76D100961998 /* luac.lua */; };
+		076023C0198A76D100961998 /* wax_CGTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602330198A76D100961998 /* wax_CGTransform.m */; };
+		076023C1198A76D100961998 /* wax_CGContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602333198A76D100961998 /* wax_CGContext.m */; };
+		076023C2198A76D100961998 /* wax_filesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602336198A76D100961998 /* wax_filesystem.m */; };
+		076023C3198A76D100961998 /* wax_http.m in Sources */ = {isa = PBXBuildFile; fileRef = 07602339198A76D100961998 /* wax_http.m */; };
+		076023C4198A76D100961998 /* wax_http_connection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0760233B198A76D100961998 /* wax_http_connection.m */; };
+		076023C5198A76D100961998 /* Rakefile in Resources */ = {isa = PBXBuildFile; fileRef = 0760233D198A76D100961998 /* Rakefile */; };
+		076023C6198A76D100961998 /* wax_json.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760233E198A76D100961998 /* wax_json.c */; };
+		076023C7198A76D100961998 /* yajl.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602345198A76D100961998 /* yajl.c */; };
+		076023C8198A76D100961998 /* yajl_alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602346198A76D100961998 /* yajl_alloc.c */; };
+		076023C9198A76D100961998 /* yajl_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602348198A76D100961998 /* yajl_buf.c */; };
+		076023CA198A76D100961998 /* yajl_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760234C198A76D100961998 /* yajl_encode.c */; };
+		076023CB198A76D100961998 /* yajl_gen.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760234E198A76D100961998 /* yajl_gen.c */; };
+		076023CC198A76D100961998 /* yajl_lex.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602350198A76D100961998 /* yajl_lex.c */; };
+		076023CD198A76D100961998 /* yajl_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602353198A76D100961998 /* yajl_parser.c */; };
+		076023CE198A76D100961998 /* yajl-1.0.9.tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = 07602355198A76D100961998 /* yajl-1.0.9.tar.gz */; };
+		076023CF198A76D100961998 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602357198A76D100961998 /* lapi.c */; };
+		076023D0198A76D100961998 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602359198A76D100961998 /* lauxlib.c */; };
+		076023D1198A76D100961998 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760235B198A76D100961998 /* lbaselib.c */; };
+		076023D2198A76D100961998 /* lcode.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760235C198A76D100961998 /* lcode.c */; };
+		076023D3198A76D100961998 /* ldblib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760235E198A76D100961998 /* ldblib.c */; };
+		076023D4198A76D100961998 /* ldebug.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760235F198A76D100961998 /* ldebug.c */; };
+		076023D5198A76D100961998 /* ldo.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602361198A76D100961998 /* ldo.c */; };
+		076023D6198A76D100961998 /* ldump.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602363198A76D100961998 /* ldump.c */; };
+		076023D7198A76D100961998 /* lfunc.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602364198A76D100961998 /* lfunc.c */; };
+		076023D8198A76D100961998 /* lgc.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602366198A76D100961998 /* lgc.c */; };
+		076023D9198A76D100961998 /* linit.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602368198A76D100961998 /* linit.c */; };
+		076023DA198A76D100961998 /* liolib.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602369198A76D100961998 /* liolib.c */; };
+		076023DB198A76D100961998 /* llex.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760236A198A76D100961998 /* llex.c */; };
+		076023DC198A76D100961998 /* lmathlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760236D198A76D100961998 /* lmathlib.c */; };
+		076023DD198A76D100961998 /* lmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760236E198A76D100961998 /* lmem.c */; };
+		076023DE198A76D100961998 /* loadlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602370198A76D100961998 /* loadlib.c */; };
+		076023DF198A76D100961998 /* lobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602371198A76D100961998 /* lobject.c */; };
+		076023E0198A76D100961998 /* lopcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602373198A76D100961998 /* lopcodes.c */; };
+		076023E1198A76D100961998 /* loslib.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602375198A76D100961998 /* loslib.c */; };
+		076023E2198A76D100961998 /* lparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602376198A76D100961998 /* lparser.c */; };
+		076023E3198A76D100961998 /* lstate.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602378198A76D100961998 /* lstate.c */; };
+		076023E4198A76D100961998 /* lstring.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760237A198A76D100961998 /* lstring.c */; };
+		076023E5198A76D100961998 /* lstrlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760237C198A76D100961998 /* lstrlib.c */; };
+		076023E6198A76D100961998 /* ltable.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760237D198A76D100961998 /* ltable.c */; };
+		076023E7198A76D100961998 /* ltablib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760237F198A76D100961998 /* ltablib.c */; };
+		076023E8198A76D100961998 /* ltm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602380198A76D100961998 /* ltm.c */; };
+		076023E9198A76D100961998 /* lundump.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602385198A76D100961998 /* lundump.c */; };
+		076023EA198A76D100961998 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602387198A76D100961998 /* lvm.c */; };
+		076023EB198A76D100961998 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 07602389198A76D100961998 /* lzio.c */; };
+		076023EC198A76D100961998 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 0760238B198A76D100961998 /* print.c */; };
+		076023ED198A76D100961998 /* project.rake in Resources */ = {isa = PBXBuildFile; fileRef = 0760238C198A76D100961998 /* project.rake */; };
+		076023EE198A76D100961998 /* define.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760238F198A76D100961998 /* define.lua */; };
+		076023EF198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602390198A76D100961998 /* init.lua */; };
+		076023F0198A76D100961998 /* enums.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602391198A76D100961998 /* enums.lua */; };
+		076023F1198A76D100961998 /* http.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602393198A76D100961998 /* http.lua */; };
+		076023F2198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602394198A76D100961998 /* init.lua */; };
+		076023F3198A76D100961998 /* number.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602395198A76D100961998 /* number.lua */; };
+		076023F4198A76D100961998 /* string.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602396198A76D100961998 /* string.lua */; };
+		076023F5198A76D100961998 /* table.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602397198A76D100961998 /* table.lua */; };
+		076023F6198A76D100961998 /* autoload.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602399198A76D100961998 /* autoload.lua */; };
+		076023F7198A76D100961998 /* base64.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239A198A76D100961998 /* base64.lua */; };
+		076023F8198A76D100961998 /* bit.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239B198A76D100961998 /* bit.lua */; };
+		076023F9198A76D100961998 /* cache.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239C198A76D100961998 /* cache.lua */; };
+		076023FA198A76D100961998 /* callback.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239D198A76D100961998 /* callback.lua */; };
+		076023FB198A76D100961998 /* frame.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239E198A76D100961998 /* frame.lua */; };
+		076023FC198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 0760239F198A76D100961998 /* init.lua */; };
+		076023FD198A76D100961998 /* pickView.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A0198A76D100961998 /* pickView.lua */; };
+		076023FE198A76D100961998 /* time.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A1198A76D100961998 /* time.lua */; };
+		076023FF198A76D100961998 /* WaxServer.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A2198A76D100961998 /* WaxServer.lua */; };
+		07602400198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A3198A76D100961998 /* init.lua */; };
+		07602401198A76D100961998 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A5198A76D100961998 /* init.lua */; };
+		07602402198A76D100961998 /* luamock.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A6198A76D100961998 /* luamock.lua */; };
+		07602403198A76D100961998 /* luaspec.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A7198A76D100961998 /* luaspec.lua */; };
+		07602404198A76D100961998 /* repl.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A8198A76D100961998 /* repl.lua */; };
+		07602405198A76D100961998 /* structs.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023A9198A76D100961998 /* structs.lua */; };
+		07602406198A76D100961998 /* waxClass.lua in Resources */ = {isa = PBXBuildFile; fileRef = 076023AA198A76D100961998 /* waxClass.lua */; };
+		07602407198A76D100961998 /* wax.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023AC198A76D100961998 /* wax.m */; };
+		07602408198A76D100961998 /* wax_class.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023AE198A76D100961998 /* wax_class.m */; };
+		07602409198A76D100961998 /* wax_gc.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B0198A76D100961998 /* wax_gc.m */; };
+		0760240A198A76D100961998 /* wax_helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B2198A76D100961998 /* wax_helpers.m */; };
+		0760240B198A76D100961998 /* wax_instance.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B4198A76D100961998 /* wax_instance.m */; };
+		0760240C198A76D100961998 /* wax_server.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B6198A76D100961998 /* wax_server.m */; };
+		0760240D198A76D100961998 /* wax_struct.m in Sources */ = {isa = PBXBuildFile; fileRef = 076023B9198A76D100961998 /* wax_struct.m */; };
+		07602411198A777900961998 /* run.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602410198A777900961998 /* run.lua */; };
+		07602414198A789D00961998 /* CKLuaViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07602413198A789D00961998 /* CKLuaViewController.lua */; };
+		0760241E198A7ADD00961998 /* main_view_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602415198A7ADD00961998 /* main_view_bg.png */; };
+		0760241F198A7ADD00961998 /* settings_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602416198A7ADD00961998 /* settings_about.png */; };
+		07602420198A7ADD00961998 /* settings_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602417198A7ADD00961998 /* settings_about@2x.png */; };
+		07602421198A7ADD00961998 /* settings_download.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602418198A7ADD00961998 /* settings_download.png */; };
+		07602422198A7ADD00961998 /* settings_download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07602419198A7ADD00961998 /* settings_download@2x.png */; };
+		07602423198A7ADD00961998 /* settings_feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = 0760241A198A7ADD00961998 /* settings_feedback.png */; };
+		07602424198A7ADD00961998 /* settings_feedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0760241B198A7ADD00961998 /* settings_feedback@2x.png */; };
+		07602425198A7ADD00961998 /* settings_rate.png in Resources */ = {isa = PBXBuildFile; fileRef = 0760241C198A7ADD00961998 /* settings_rate.png */; };
+		07602426198A7ADD00961998 /* settings_rate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0760241D198A7ADD00961998 /* settings_rate@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		076022E6198A747700961998 /* WaxDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaxDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		076022E9198A747700961998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		076022EB198A747700961998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		076022ED198A747700961998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		076022F1198A747700961998 /* WaxDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WaxDemo-Info.plist"; sourceTree = "<group>"; };
+		076022F3198A747700961998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		076022F5198A747700961998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		076022F7198A747700961998 /* WaxDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WaxDemo-Prefix.pch"; sourceTree = "<group>"; };
+		076022F8198A747700961998 /* CKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKAppDelegate.h; sourceTree = "<group>"; };
+		076022F9198A747700961998 /* CKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKAppDelegate.m; sourceTree = "<group>"; };
+		076022FE198A747700961998 /* CKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKViewController.h; sourceTree = "<group>"; };
+		076022FF198A747700961998 /* CKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKViewController.m; sourceTree = "<group>"; };
+		07602301198A747700961998 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07602308198A747700961998 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0760231E198A751900961998 /* CKMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMainViewController.h; sourceTree = "<group>"; };
+		0760231F198A751900961998 /* CKMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKMainViewController.m; sourceTree = "<group>"; };
+		07602320198A751900961998 /* CKMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CKMainViewController.xib; sourceTree = "<group>"; };
+		07602325198A76D100961998 /* hammer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hammer; sourceTree = "<group>"; };
+		07602326198A76D100961998 /* update-xibs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "update-xibs"; sourceTree = "<group>"; };
+		07602327198A76D100961998 /* waxsim */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = waxsim; sourceTree = "<group>"; };
+		0760232A198A76D100961998 /* compile-stdlib.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "compile-stdlib.sh"; sourceTree = "<group>"; };
+		0760232B198A76D100961998 /* copy-scripts.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "copy-scripts.sh"; sourceTree = "<group>"; };
+		0760232C198A76D100961998 /* luac.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = luac.lua; sourceTree = "<group>"; };
+		0760232F198A76D100961998 /* wax_CGTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_CGTransform.h; sourceTree = "<group>"; };
+		07602330198A76D100961998 /* wax_CGTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_CGTransform.m; sourceTree = "<group>"; };
+		07602332198A76D100961998 /* wax_CGContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_CGContext.h; sourceTree = "<group>"; };
+		07602333198A76D100961998 /* wax_CGContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_CGContext.m; sourceTree = "<group>"; };
+		07602335198A76D100961998 /* wax_filesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_filesystem.h; sourceTree = "<group>"; };
+		07602336198A76D100961998 /* wax_filesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_filesystem.m; sourceTree = "<group>"; };
+		07602338198A76D100961998 /* wax_http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_http.h; sourceTree = "<group>"; };
+		07602339198A76D100961998 /* wax_http.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_http.m; sourceTree = "<group>"; };
+		0760233A198A76D100961998 /* wax_http_connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_http_connection.h; sourceTree = "<group>"; };
+		0760233B198A76D100961998 /* wax_http_connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_http_connection.m; sourceTree = "<group>"; };
+		0760233D198A76D100961998 /* Rakefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		0760233E198A76D100961998 /* wax_json.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wax_json.c; sourceTree = "<group>"; };
+		0760233F198A76D100961998 /* wax_json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_json.h; sourceTree = "<group>"; };
+		07602342198A76D100961998 /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
+		07602343198A76D100961998 /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_gen.h; sourceTree = "<group>"; };
+		07602344198A76D100961998 /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parse.h; sourceTree = "<group>"; };
+		07602345198A76D100961998 /* yajl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl.c; sourceTree = "<group>"; };
+		07602346198A76D100961998 /* yajl_alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_alloc.c; sourceTree = "<group>"; };
+		07602347198A76D100961998 /* yajl_alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_alloc.h; sourceTree = "<group>"; };
+		07602348198A76D100961998 /* yajl_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_buf.c; sourceTree = "<group>"; };
+		07602349198A76D100961998 /* yajl_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_buf.h; sourceTree = "<group>"; };
+		0760234A198A76D100961998 /* yajl_bytestack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_bytestack.h; sourceTree = "<group>"; };
+		0760234B198A76D100961998 /* yajl_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_common.h; sourceTree = "<group>"; };
+		0760234C198A76D100961998 /* yajl_encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_encode.c; sourceTree = "<group>"; };
+		0760234D198A76D100961998 /* yajl_encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_encode.h; sourceTree = "<group>"; };
+		0760234E198A76D100961998 /* yajl_gen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_gen.c; sourceTree = "<group>"; };
+		0760234F198A76D100961998 /* yajl_gen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_gen.h; sourceTree = "<group>"; };
+		07602350198A76D100961998 /* yajl_lex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_lex.c; sourceTree = "<group>"; };
+		07602351198A76D100961998 /* yajl_lex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_lex.h; sourceTree = "<group>"; };
+		07602352198A76D100961998 /* yajl_parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parse.h; sourceTree = "<group>"; };
+		07602353198A76D100961998 /* yajl_parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yajl_parser.c; sourceTree = "<group>"; };
+		07602354198A76D100961998 /* yajl_parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yajl_parser.h; sourceTree = "<group>"; };
+		07602355198A76D100961998 /* yajl-1.0.9.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "yajl-1.0.9.tar.gz"; sourceTree = "<group>"; };
+		07602357198A76D100961998 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lapi.c; sourceTree = "<group>"; };
+		07602358198A76D100961998 /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lapi.h; sourceTree = "<group>"; };
+		07602359198A76D100961998 /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lauxlib.c; sourceTree = "<group>"; };
+		0760235A198A76D100961998 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lauxlib.h; sourceTree = "<group>"; };
+		0760235B198A76D100961998 /* lbaselib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lbaselib.c; sourceTree = "<group>"; };
+		0760235C198A76D100961998 /* lcode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lcode.c; sourceTree = "<group>"; };
+		0760235D198A76D100961998 /* lcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lcode.h; sourceTree = "<group>"; };
+		0760235E198A76D100961998 /* ldblib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ldblib.c; sourceTree = "<group>"; };
+		0760235F198A76D100961998 /* ldebug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ldebug.c; sourceTree = "<group>"; };
+		07602360198A76D100961998 /* ldebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ldebug.h; sourceTree = "<group>"; };
+		07602361198A76D100961998 /* ldo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ldo.c; sourceTree = "<group>"; };
+		07602362198A76D100961998 /* ldo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ldo.h; sourceTree = "<group>"; };
+		07602363198A76D100961998 /* ldump.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ldump.c; sourceTree = "<group>"; };
+		07602364198A76D100961998 /* lfunc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lfunc.c; sourceTree = "<group>"; };
+		07602365198A76D100961998 /* lfunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lfunc.h; sourceTree = "<group>"; };
+		07602366198A76D100961998 /* lgc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lgc.c; sourceTree = "<group>"; };
+		07602367198A76D100961998 /* lgc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lgc.h; sourceTree = "<group>"; };
+		07602368198A76D100961998 /* linit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = linit.c; sourceTree = "<group>"; };
+		07602369198A76D100961998 /* liolib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = liolib.c; sourceTree = "<group>"; };
+		0760236A198A76D100961998 /* llex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = llex.c; sourceTree = "<group>"; };
+		0760236B198A76D100961998 /* llex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = llex.h; sourceTree = "<group>"; };
+		0760236C198A76D100961998 /* llimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = llimits.h; sourceTree = "<group>"; };
+		0760236D198A76D100961998 /* lmathlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lmathlib.c; sourceTree = "<group>"; };
+		0760236E198A76D100961998 /* lmem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lmem.c; sourceTree = "<group>"; };
+		0760236F198A76D100961998 /* lmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmem.h; sourceTree = "<group>"; };
+		07602370198A76D100961998 /* loadlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loadlib.c; sourceTree = "<group>"; };
+		07602371198A76D100961998 /* lobject.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lobject.c; sourceTree = "<group>"; };
+		07602372198A76D100961998 /* lobject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lobject.h; sourceTree = "<group>"; };
+		07602373198A76D100961998 /* lopcodes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lopcodes.c; sourceTree = "<group>"; };
+		07602374198A76D100961998 /* lopcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lopcodes.h; sourceTree = "<group>"; };
+		07602375198A76D100961998 /* loslib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = loslib.c; sourceTree = "<group>"; };
+		07602376198A76D100961998 /* lparser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lparser.c; sourceTree = "<group>"; };
+		07602377198A76D100961998 /* lparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lparser.h; sourceTree = "<group>"; };
+		07602378198A76D100961998 /* lstate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lstate.c; sourceTree = "<group>"; };
+		07602379198A76D100961998 /* lstate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lstate.h; sourceTree = "<group>"; };
+		0760237A198A76D100961998 /* lstring.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lstring.c; sourceTree = "<group>"; };
+		0760237B198A76D100961998 /* lstring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lstring.h; sourceTree = "<group>"; };
+		0760237C198A76D100961998 /* lstrlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lstrlib.c; sourceTree = "<group>"; };
+		0760237D198A76D100961998 /* ltable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ltable.c; sourceTree = "<group>"; };
+		0760237E198A76D100961998 /* ltable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ltable.h; sourceTree = "<group>"; };
+		0760237F198A76D100961998 /* ltablib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ltablib.c; sourceTree = "<group>"; };
+		07602380198A76D100961998 /* ltm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ltm.c; sourceTree = "<group>"; };
+		07602381198A76D100961998 /* ltm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ltm.h; sourceTree = "<group>"; };
+		07602382198A76D100961998 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua.h; sourceTree = "<group>"; };
+		07602383198A76D100961998 /* luaconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luaconf.h; sourceTree = "<group>"; };
+		07602384198A76D100961998 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lualib.h; sourceTree = "<group>"; };
+		07602385198A76D100961998 /* lundump.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lundump.c; sourceTree = "<group>"; };
+		07602386198A76D100961998 /* lundump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lundump.h; sourceTree = "<group>"; };
+		07602387198A76D100961998 /* lvm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lvm.c; sourceTree = "<group>"; };
+		07602388198A76D100961998 /* lvm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lvm.h; sourceTree = "<group>"; };
+		07602389198A76D100961998 /* lzio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lzio.c; sourceTree = "<group>"; };
+		0760238A198A76D100961998 /* lzio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzio.h; sourceTree = "<group>"; };
+		0760238B198A76D100961998 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = print.c; sourceTree = "<group>"; };
+		0760238C198A76D100961998 /* project.rake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = project.rake; sourceTree = "<group>"; };
+		0760238F198A76D100961998 /* define.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = define.lua; sourceTree = "<group>"; };
+		07602390198A76D100961998 /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
+		07602391198A76D100961998 /* enums.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = enums.lua; sourceTree = "<group>"; };
+		07602393198A76D100961998 /* http.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = http.lua; sourceTree = "<group>"; };
+		07602394198A76D100961998 /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
+		07602395198A76D100961998 /* number.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = number.lua; sourceTree = "<group>"; };
+		07602396198A76D100961998 /* string.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = string.lua; sourceTree = "<group>"; };
+		07602397198A76D100961998 /* table.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = table.lua; sourceTree = "<group>"; };
+		07602399198A76D100961998 /* autoload.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = autoload.lua; sourceTree = "<group>"; };
+		0760239A198A76D100961998 /* base64.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = base64.lua; sourceTree = "<group>"; };
+		0760239B198A76D100961998 /* bit.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bit.lua; sourceTree = "<group>"; };
+		0760239C198A76D100961998 /* cache.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cache.lua; sourceTree = "<group>"; };
+		0760239D198A76D100961998 /* callback.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = callback.lua; sourceTree = "<group>"; };
+		0760239E198A76D100961998 /* frame.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = frame.lua; sourceTree = "<group>"; };
+		0760239F198A76D100961998 /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
+		076023A0198A76D100961998 /* pickView.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pickView.lua; sourceTree = "<group>"; };
+		076023A1198A76D100961998 /* time.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = time.lua; sourceTree = "<group>"; };
+		076023A2198A76D100961998 /* WaxServer.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WaxServer.lua; sourceTree = "<group>"; };
+		076023A3198A76D100961998 /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
+		076023A5198A76D100961998 /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
+		076023A6198A76D100961998 /* luamock.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = luamock.lua; sourceTree = "<group>"; };
+		076023A7198A76D100961998 /* luaspec.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = luaspec.lua; sourceTree = "<group>"; };
+		076023A8198A76D100961998 /* repl.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repl.lua; sourceTree = "<group>"; };
+		076023A9198A76D100961998 /* structs.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = structs.lua; sourceTree = "<group>"; };
+		076023AA198A76D100961998 /* waxClass.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waxClass.lua; sourceTree = "<group>"; };
+		076023AB198A76D100961998 /* wax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax.h; sourceTree = "<group>"; };
+		076023AC198A76D100961998 /* wax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax.m; sourceTree = "<group>"; };
+		076023AD198A76D100961998 /* wax_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_class.h; sourceTree = "<group>"; };
+		076023AE198A76D100961998 /* wax_class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_class.m; sourceTree = "<group>"; };
+		076023AF198A76D100961998 /* wax_gc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_gc.h; sourceTree = "<group>"; };
+		076023B0198A76D100961998 /* wax_gc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_gc.m; sourceTree = "<group>"; };
+		076023B1198A76D100961998 /* wax_helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_helpers.h; sourceTree = "<group>"; };
+		076023B2198A76D100961998 /* wax_helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_helpers.m; sourceTree = "<group>"; };
+		076023B3198A76D100961998 /* wax_instance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_instance.h; sourceTree = "<group>"; };
+		076023B4198A76D100961998 /* wax_instance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_instance.m; sourceTree = "<group>"; };
+		076023B5198A76D100961998 /* wax_server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_server.h; sourceTree = "<group>"; };
+		076023B6198A76D100961998 /* wax_server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_server.m; sourceTree = "<group>"; };
+		076023B7198A76D100961998 /* wax_stdlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_stdlib.h; sourceTree = "<group>"; };
+		076023B8198A76D100961998 /* wax_struct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_struct.h; sourceTree = "<group>"; };
+		076023B9198A76D100961998 /* wax_struct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_struct.m; sourceTree = "<group>"; };
+		0760240E198A771200961998 /* ProtocolLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolLoader.h; sourceTree = SOURCE_ROOT; };
+		07602410198A777900961998 /* run.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = run.lua; sourceTree = "<group>"; };
+		07602413198A789D00961998 /* CKLuaViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CKLuaViewController.lua; sourceTree = "<group>"; };
+		07602415198A7ADD00961998 /* main_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_view_bg.png; sourceTree = "<group>"; };
+		07602416198A7ADD00961998 /* settings_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_about.png; sourceTree = "<group>"; };
+		07602417198A7ADD00961998 /* settings_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_about@2x.png"; sourceTree = "<group>"; };
+		07602418198A7ADD00961998 /* settings_download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_download.png; sourceTree = "<group>"; };
+		07602419198A7ADD00961998 /* settings_download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_download@2x.png"; sourceTree = "<group>"; };
+		0760241A198A7ADD00961998 /* settings_feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_feedback.png; sourceTree = "<group>"; };
+		0760241B198A7ADD00961998 /* settings_feedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_feedback@2x.png"; sourceTree = "<group>"; };
+		0760241C198A7ADD00961998 /* settings_rate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_rate.png; sourceTree = "<group>"; };
+		0760241D198A7ADD00961998 /* settings_rate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_rate@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		076022E3198A747700961998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076022EC198A747700961998 /* CoreGraphics.framework in Frameworks */,
+				076022EE198A747700961998 /* UIKit.framework in Frameworks */,
+				076022EA198A747700961998 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		076022DD198A747700961998 = {
+			isa = PBXGroup;
+			children = (
+				076022EF198A747700961998 /* WaxDemo */,
+				076022E8198A747700961998 /* Frameworks */,
+				076022E7198A747700961998 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		076022E7198A747700961998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				076022E6198A747700961998 /* WaxDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		076022E8198A747700961998 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				076022E9198A747700961998 /* Foundation.framework */,
+				076022EB198A747700961998 /* CoreGraphics.framework */,
+				076022ED198A747700961998 /* UIKit.framework */,
+				07602308198A747700961998 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		076022EF198A747700961998 /* WaxDemo */ = {
+			isa = PBXGroup;
+			children = (
+				07602323198A76D100961998 /* wax */,
+				076022F8198A747700961998 /* CKAppDelegate.h */,
+				076022F9198A747700961998 /* CKAppDelegate.m */,
+				0760231E198A751900961998 /* CKMainViewController.h */,
+				0760231F198A751900961998 /* CKMainViewController.m */,
+				07602320198A751900961998 /* CKMainViewController.xib */,
+				076022FE198A747700961998 /* CKViewController.h */,
+				076022FF198A747700961998 /* CKViewController.m */,
+				07602301198A747700961998 /* Images.xcassets */,
+				076022F0198A747700961998 /* Supporting Files */,
+			);
+			path = WaxDemo;
+			sourceTree = "<group>";
+		};
+		076022F0198A747700961998 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				076022F2198A747700961998 /* InfoPlist.strings */,
+				076022F5198A747700961998 /* main.m */,
+				07602415198A7ADD00961998 /* main_view_bg.png */,
+				07602416198A7ADD00961998 /* settings_about.png */,
+				07602417198A7ADD00961998 /* settings_about@2x.png */,
+				07602418198A7ADD00961998 /* settings_download.png */,
+				07602419198A7ADD00961998 /* settings_download@2x.png */,
+				0760241A198A7ADD00961998 /* settings_feedback.png */,
+				0760241B198A7ADD00961998 /* settings_feedback@2x.png */,
+				0760241C198A7ADD00961998 /* settings_rate.png */,
+				0760241D198A7ADD00961998 /* settings_rate@2x.png */,
+				076022F1198A747700961998 /* WaxDemo-Info.plist */,
+				076022F7198A747700961998 /* WaxDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07602323198A76D100961998 /* wax */ = {
+			isa = PBXGroup;
+			children = (
+				07602324198A76D100961998 /* bin */,
+				07602328198A76D100961998 /* lib */,
+				0760240E198A771200961998 /* ProtocolLoader.h */,
+				0760240F198A777900961998 /* scripts */,
+			);
+			path = wax;
+			sourceTree = SOURCE_ROOT;
+		};
+		07602324198A76D100961998 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				07602325198A76D100961998 /* hammer */,
+				07602326198A76D100961998 /* update-xibs */,
+				07602327198A76D100961998 /* waxsim */,
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		07602328198A76D100961998 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				07602329198A76D100961998 /* build-scripts */,
+				0760232D198A76D100961998 /* extensions */,
+				07602356198A76D100961998 /* lua */,
+				0760238C198A76D100961998 /* project.rake */,
+				0760238D198A76D100961998 /* stdlib */,
+				076023AB198A76D100961998 /* wax.h */,
+				076023AC198A76D100961998 /* wax.m */,
+				076023AD198A76D100961998 /* wax_class.h */,
+				076023AE198A76D100961998 /* wax_class.m */,
+				076023AF198A76D100961998 /* wax_gc.h */,
+				076023B0198A76D100961998 /* wax_gc.m */,
+				076023B1198A76D100961998 /* wax_helpers.h */,
+				076023B2198A76D100961998 /* wax_helpers.m */,
+				076023B3198A76D100961998 /* wax_instance.h */,
+				076023B4198A76D100961998 /* wax_instance.m */,
+				076023B5198A76D100961998 /* wax_server.h */,
+				076023B6198A76D100961998 /* wax_server.m */,
+				076023B7198A76D100961998 /* wax_stdlib.h */,
+				076023B8198A76D100961998 /* wax_struct.h */,
+				076023B9198A76D100961998 /* wax_struct.m */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		07602329198A76D100961998 /* build-scripts */ = {
+			isa = PBXGroup;
+			children = (
+				0760232A198A76D100961998 /* compile-stdlib.sh */,
+				0760232B198A76D100961998 /* copy-scripts.sh */,
+				0760232C198A76D100961998 /* luac.lua */,
+			);
+			path = "build-scripts";
+			sourceTree = "<group>";
+		};
+		0760232D198A76D100961998 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0760232E198A76D100961998 /* CGAffine */,
+				07602331198A76D100961998 /* CGContext */,
+				07602334198A76D100961998 /* filesystem */,
+				07602337198A76D100961998 /* HTTP */,
+				0760233C198A76D100961998 /* json */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		0760232E198A76D100961998 /* CGAffine */ = {
+			isa = PBXGroup;
+			children = (
+				0760232F198A76D100961998 /* wax_CGTransform.h */,
+				07602330198A76D100961998 /* wax_CGTransform.m */,
+			);
+			path = CGAffine;
+			sourceTree = "<group>";
+		};
+		07602331198A76D100961998 /* CGContext */ = {
+			isa = PBXGroup;
+			children = (
+				07602332198A76D100961998 /* wax_CGContext.h */,
+				07602333198A76D100961998 /* wax_CGContext.m */,
+			);
+			path = CGContext;
+			sourceTree = "<group>";
+		};
+		07602334198A76D100961998 /* filesystem */ = {
+			isa = PBXGroup;
+			children = (
+				07602335198A76D100961998 /* wax_filesystem.h */,
+				07602336198A76D100961998 /* wax_filesystem.m */,
+			);
+			path = filesystem;
+			sourceTree = "<group>";
+		};
+		07602337198A76D100961998 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				07602338198A76D100961998 /* wax_http.h */,
+				07602339198A76D100961998 /* wax_http.m */,
+				0760233A198A76D100961998 /* wax_http_connection.h */,
+				0760233B198A76D100961998 /* wax_http_connection.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		0760233C198A76D100961998 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				0760233D198A76D100961998 /* Rakefile */,
+				0760233E198A76D100961998 /* wax_json.c */,
+				0760233F198A76D100961998 /* wax_json.h */,
+				07602340198A76D100961998 /* yajl */,
+				07602355198A76D100961998 /* yajl-1.0.9.tar.gz */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		07602340198A76D100961998 /* yajl */ = {
+			isa = PBXGroup;
+			children = (
+				07602341198A76D100961998 /* api */,
+				07602345198A76D100961998 /* yajl.c */,
+				07602346198A76D100961998 /* yajl_alloc.c */,
+				07602347198A76D100961998 /* yajl_alloc.h */,
+				07602348198A76D100961998 /* yajl_buf.c */,
+				07602349198A76D100961998 /* yajl_buf.h */,
+				0760234A198A76D100961998 /* yajl_bytestack.h */,
+				0760234B198A76D100961998 /* yajl_common.h */,
+				0760234C198A76D100961998 /* yajl_encode.c */,
+				0760234D198A76D100961998 /* yajl_encode.h */,
+				0760234E198A76D100961998 /* yajl_gen.c */,
+				0760234F198A76D100961998 /* yajl_gen.h */,
+				07602350198A76D100961998 /* yajl_lex.c */,
+				07602351198A76D100961998 /* yajl_lex.h */,
+				07602352198A76D100961998 /* yajl_parse.h */,
+				07602353198A76D100961998 /* yajl_parser.c */,
+				07602354198A76D100961998 /* yajl_parser.h */,
+			);
+			path = yajl;
+			sourceTree = "<group>";
+		};
+		07602341198A76D100961998 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				07602342198A76D100961998 /* yajl_common.h */,
+				07602343198A76D100961998 /* yajl_gen.h */,
+				07602344198A76D100961998 /* yajl_parse.h */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		07602356198A76D100961998 /* lua */ = {
+			isa = PBXGroup;
+			children = (
+				07602357198A76D100961998 /* lapi.c */,
+				07602358198A76D100961998 /* lapi.h */,
+				07602359198A76D100961998 /* lauxlib.c */,
+				0760235A198A76D100961998 /* lauxlib.h */,
+				0760235B198A76D100961998 /* lbaselib.c */,
+				0760235C198A76D100961998 /* lcode.c */,
+				0760235D198A76D100961998 /* lcode.h */,
+				0760235E198A76D100961998 /* ldblib.c */,
+				0760235F198A76D100961998 /* ldebug.c */,
+				07602360198A76D100961998 /* ldebug.h */,
+				07602361198A76D100961998 /* ldo.c */,
+				07602362198A76D100961998 /* ldo.h */,
+				07602363198A76D100961998 /* ldump.c */,
+				07602364198A76D100961998 /* lfunc.c */,
+				07602365198A76D100961998 /* lfunc.h */,
+				07602366198A76D100961998 /* lgc.c */,
+				07602367198A76D100961998 /* lgc.h */,
+				07602368198A76D100961998 /* linit.c */,
+				07602369198A76D100961998 /* liolib.c */,
+				0760236A198A76D100961998 /* llex.c */,
+				0760236B198A76D100961998 /* llex.h */,
+				0760236C198A76D100961998 /* llimits.h */,
+				0760236D198A76D100961998 /* lmathlib.c */,
+				0760236E198A76D100961998 /* lmem.c */,
+				0760236F198A76D100961998 /* lmem.h */,
+				07602370198A76D100961998 /* loadlib.c */,
+				07602371198A76D100961998 /* lobject.c */,
+				07602372198A76D100961998 /* lobject.h */,
+				07602373198A76D100961998 /* lopcodes.c */,
+				07602374198A76D100961998 /* lopcodes.h */,
+				07602375198A76D100961998 /* loslib.c */,
+				07602376198A76D100961998 /* lparser.c */,
+				07602377198A76D100961998 /* lparser.h */,
+				07602378198A76D100961998 /* lstate.c */,
+				07602379198A76D100961998 /* lstate.h */,
+				0760237A198A76D100961998 /* lstring.c */,
+				0760237B198A76D100961998 /* lstring.h */,
+				0760237C198A76D100961998 /* lstrlib.c */,
+				0760237D198A76D100961998 /* ltable.c */,
+				0760237E198A76D100961998 /* ltable.h */,
+				0760237F198A76D100961998 /* ltablib.c */,
+				07602380198A76D100961998 /* ltm.c */,
+				07602381198A76D100961998 /* ltm.h */,
+				07602382198A76D100961998 /* lua.h */,
+				07602383198A76D100961998 /* luaconf.h */,
+				07602384198A76D100961998 /* lualib.h */,
+				07602385198A76D100961998 /* lundump.c */,
+				07602386198A76D100961998 /* lundump.h */,
+				07602387198A76D100961998 /* lvm.c */,
+				07602388198A76D100961998 /* lvm.h */,
+				07602389198A76D100961998 /* lzio.c */,
+				0760238A198A76D100961998 /* lzio.h */,
+				0760238B198A76D100961998 /* print.c */,
+			);
+			path = lua;
+			sourceTree = "<group>";
+		};
+		0760238D198A76D100961998 /* stdlib */ = {
+			isa = PBXGroup;
+			children = (
+				0760238E198A76D100961998 /* bba */,
+				07602391198A76D100961998 /* enums.lua */,
+				07602392198A76D100961998 /* ext */,
+				07602398198A76D100961998 /* helpers */,
+				076023A3198A76D100961998 /* init.lua */,
+				076023A4198A76D100961998 /* luaspec */,
+				076023A8198A76D100961998 /* repl.lua */,
+				076023A9198A76D100961998 /* structs.lua */,
+				076023AA198A76D100961998 /* waxClass.lua */,
+			);
+			path = stdlib;
+			sourceTree = "<group>";
+		};
+		0760238E198A76D100961998 /* bba */ = {
+			isa = PBXGroup;
+			children = (
+				0760238F198A76D100961998 /* define.lua */,
+				07602390198A76D100961998 /* init.lua */,
+			);
+			path = bba;
+			sourceTree = "<group>";
+		};
+		07602392198A76D100961998 /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				07602393198A76D100961998 /* http.lua */,
+				07602394198A76D100961998 /* init.lua */,
+				07602395198A76D100961998 /* number.lua */,
+				07602396198A76D100961998 /* string.lua */,
+				07602397198A76D100961998 /* table.lua */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
+		07602398198A76D100961998 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				07602399198A76D100961998 /* autoload.lua */,
+				0760239A198A76D100961998 /* base64.lua */,
+				0760239B198A76D100961998 /* bit.lua */,
+				0760239C198A76D100961998 /* cache.lua */,
+				0760239D198A76D100961998 /* callback.lua */,
+				0760239E198A76D100961998 /* frame.lua */,
+				0760239F198A76D100961998 /* init.lua */,
+				076023A0198A76D100961998 /* pickView.lua */,
+				076023A1198A76D100961998 /* time.lua */,
+				076023A2198A76D100961998 /* WaxServer.lua */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		076023A4198A76D100961998 /* luaspec */ = {
+			isa = PBXGroup;
+			children = (
+				076023A5198A76D100961998 /* init.lua */,
+				076023A6198A76D100961998 /* luamock.lua */,
+				076023A7198A76D100961998 /* luaspec.lua */,
+			);
+			path = luaspec;
+			sourceTree = "<group>";
+		};
+		0760240F198A777900961998 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				07602410198A777900961998 /* run.lua */,
+				07602413198A789D00961998 /* CKLuaViewController.lua */,
+			);
+			path = scripts;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		076022E5198A747700961998 /* WaxDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07602318198A747700961998 /* Build configuration list for PBXNativeTarget "WaxDemo" */;
+			buildPhases = (
+				07602412198A77AF00961998 /* ShellScript */,
+				076022E2198A747700961998 /* Sources */,
+				076022E3198A747700961998 /* Frameworks */,
+				076022E4198A747700961998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaxDemo;
+			productName = WaxDemo;
+			productReference = 076022E6198A747700961998 /* WaxDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		076022DE198A747700961998 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CK;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "张超";
+			};
+			buildConfigurationList = 076022E1198A747700961998 /* Build configuration list for PBXProject "WaxDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 076022DD198A747700961998;
+			productRefGroup = 076022E7198A747700961998 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				076022E5198A747700961998 /* WaxDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		076022E4198A747700961998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				076023BE198A76D100961998 /* copy-scripts.sh in Resources */,
+				076023F3198A76D100961998 /* number.lua in Resources */,
+				076023FA198A76D100961998 /* callback.lua in Resources */,
+				076023BA198A76D100961998 /* hammer in Resources */,
+				076023BD198A76D100961998 /* compile-stdlib.sh in Resources */,
+				07602302198A747700961998 /* Images.xcassets in Resources */,
+				076023FB198A76D100961998 /* frame.lua in Resources */,
+				076023FC198A76D100961998 /* init.lua in Resources */,
+				07602425198A7ADD00961998 /* settings_rate.png in Resources */,
+				076023F5198A76D100961998 /* table.lua in Resources */,
+				076023ED198A76D100961998 /* project.rake in Resources */,
+				07602411198A777900961998 /* run.lua in Resources */,
+				07602403198A76D100961998 /* luaspec.lua in Resources */,
+				076023F0198A76D100961998 /* enums.lua in Resources */,
+				07602422198A7ADD00961998 /* settings_download@2x.png in Resources */,
+				07602322198A751900961998 /* CKMainViewController.xib in Resources */,
+				07602401198A76D100961998 /* init.lua in Resources */,
+				076023EF198A76D100961998 /* init.lua in Resources */,
+				076023F1198A76D100961998 /* http.lua in Resources */,
+				076023FE198A76D100961998 /* time.lua in Resources */,
+				07602414198A789D00961998 /* CKLuaViewController.lua in Resources */,
+				076023C5198A76D100961998 /* Rakefile in Resources */,
+				076023BB198A76D100961998 /* update-xibs in Resources */,
+				07602405198A76D100961998 /* structs.lua in Resources */,
+				076023F9198A76D100961998 /* cache.lua in Resources */,
+				07602423198A7ADD00961998 /* settings_feedback.png in Resources */,
+				076023F8198A76D100961998 /* bit.lua in Resources */,
+				07602400198A76D100961998 /* init.lua in Resources */,
+				076023F7198A76D100961998 /* base64.lua in Resources */,
+				076023FF198A76D100961998 /* WaxServer.lua in Resources */,
+				07602421198A7ADD00961998 /* settings_download.png in Resources */,
+				07602424198A7ADD00961998 /* settings_feedback@2x.png in Resources */,
+				07602406198A76D100961998 /* waxClass.lua in Resources */,
+				0760241F198A7ADD00961998 /* settings_about.png in Resources */,
+				07602402198A76D100961998 /* luamock.lua in Resources */,
+				07602404198A76D100961998 /* repl.lua in Resources */,
+				076023F4198A76D100961998 /* string.lua in Resources */,
+				076023EE198A76D100961998 /* define.lua in Resources */,
+				076023F6198A76D100961998 /* autoload.lua in Resources */,
+				076023FD198A76D100961998 /* pickView.lua in Resources */,
+				07602420198A7ADD00961998 /* settings_about@2x.png in Resources */,
+				0760241E198A7ADD00961998 /* main_view_bg.png in Resources */,
+				076022F4198A747700961998 /* InfoPlist.strings in Resources */,
+				076023CE198A76D100961998 /* yajl-1.0.9.tar.gz in Resources */,
+				076023F2198A76D100961998 /* init.lua in Resources */,
+				07602426198A7ADD00961998 /* settings_rate@2x.png in Resources */,
+				076023BF198A76D100961998 /* luac.lua in Resources */,
+				076023BC198A76D100961998 /* waxsim in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07602412198A77AF00961998 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "$PROJECT_DIR/wax/lib/build-scripts/compile-stdlib.sh\n$PROJECT_DIR/wax/lib/build-scripts/copy-scripts.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		076022E2198A747700961998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07602407198A76D100961998 /* wax.m in Sources */,
+				076023DB198A76D100961998 /* llex.c in Sources */,
+				076023D7198A76D100961998 /* lfunc.c in Sources */,
+				076023DD198A76D100961998 /* lmem.c in Sources */,
+				076023E6198A76D100961998 /* ltable.c in Sources */,
+				076023D2198A76D100961998 /* lcode.c in Sources */,
+				076023DA198A76D100961998 /* liolib.c in Sources */,
+				076023DF198A76D100961998 /* lobject.c in Sources */,
+				076023C2198A76D100961998 /* wax_filesystem.m in Sources */,
+				076023E4198A76D100961998 /* lstring.c in Sources */,
+				076023D1198A76D100961998 /* lbaselib.c in Sources */,
+				076022FA198A747700961998 /* CKAppDelegate.m in Sources */,
+				076023C4198A76D100961998 /* wax_http_connection.m in Sources */,
+				076023EA198A76D100961998 /* lvm.c in Sources */,
+				076023D8198A76D100961998 /* lgc.c in Sources */,
+				076023CC198A76D100961998 /* yajl_lex.c in Sources */,
+				076023E0198A76D100961998 /* lopcodes.c in Sources */,
+				076023E9198A76D100961998 /* lundump.c in Sources */,
+				0760240C198A76D100961998 /* wax_server.m in Sources */,
+				076023D0198A76D100961998 /* lauxlib.c in Sources */,
+				076022F6198A747700961998 /* main.m in Sources */,
+				07602409198A76D100961998 /* wax_gc.m in Sources */,
+				076023C1198A76D100961998 /* wax_CGContext.m in Sources */,
+				076023E3198A76D100961998 /* lstate.c in Sources */,
+				076023DC198A76D100961998 /* lmathlib.c in Sources */,
+				076023D4198A76D100961998 /* ldebug.c in Sources */,
+				076023EC198A76D100961998 /* print.c in Sources */,
+				07602408198A76D100961998 /* wax_class.m in Sources */,
+				076023E2198A76D100961998 /* lparser.c in Sources */,
+				076023E1198A76D100961998 /* loslib.c in Sources */,
+				076023E5198A76D100961998 /* lstrlib.c in Sources */,
+				076023DE198A76D100961998 /* loadlib.c in Sources */,
+				076023C3198A76D100961998 /* wax_http.m in Sources */,
+				076023CF198A76D100961998 /* lapi.c in Sources */,
+				07602300198A747700961998 /* CKViewController.m in Sources */,
+				07602321198A751900961998 /* CKMainViewController.m in Sources */,
+				076023C7198A76D100961998 /* yajl.c in Sources */,
+				076023D6198A76D100961998 /* ldump.c in Sources */,
+				076023EB198A76D100961998 /* lzio.c in Sources */,
+				076023C6198A76D100961998 /* wax_json.c in Sources */,
+				076023E8198A76D100961998 /* ltm.c in Sources */,
+				076023C0198A76D100961998 /* wax_CGTransform.m in Sources */,
+				076023CA198A76D100961998 /* yajl_encode.c in Sources */,
+				076023E7198A76D100961998 /* ltablib.c in Sources */,
+				076023CD198A76D100961998 /* yajl_parser.c in Sources */,
+				076023D3198A76D100961998 /* ldblib.c in Sources */,
+				0760240B198A76D100961998 /* wax_instance.m in Sources */,
+				076023C9198A76D100961998 /* yajl_buf.c in Sources */,
+				076023D9198A76D100961998 /* linit.c in Sources */,
+				0760240D198A76D100961998 /* wax_struct.m in Sources */,
+				076023D5198A76D100961998 /* ldo.c in Sources */,
+				0760240A198A76D100961998 /* wax_helpers.m in Sources */,
+				076023CB198A76D100961998 /* yajl_gen.c in Sources */,
+				076023C8198A76D100961998 /* yajl_alloc.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		076022F2198A747700961998 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				076022F3198A747700961998 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07602316198A747700961998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		07602317198A747700961998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07602319198A747700961998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WaxDemo/WaxDemo-Prefix.pch";
+				INFOPLIST_FILE = "WaxDemo/WaxDemo-Info.plist";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0760231A198A747700961998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WaxDemo/WaxDemo-Prefix.pch";
+				INFOPLIST_FILE = "WaxDemo/WaxDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		076022E1198A747700961998 /* Build configuration list for PBXProject "WaxDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07602316198A747700961998 /* Debug */,
+				07602317198A747700961998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07602318198A747700961998 /* Build configuration list for PBXNativeTarget "WaxDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07602319198A747700961998 /* Debug */,
+				0760231A198A747700961998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 076022DE198A747700961998 /* Project object */;
+}
