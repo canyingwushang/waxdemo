@@ -120,27 +120,27 @@ void wax_run(char* initScript)
     }
 }
 
-void wax_startWithServer() {		
-	wax_setup();
-	[wax_server class]; // You need to load the class somehow via the wax.framework
-	lua_State *L = wax_currentLuaState();
-	
-	// Load all the wax lua scripts
-    if (luaL_dofile(L, WAX_SCRIPTS_DIR "/scripts/wax/init.lua") != 0) {
-        fprintf(stderr,"Fatal error opening wax scripts: %s\n", lua_tostring(L,-1));
-    }
-	
-	Class WaxServer = objc_getClass("WaxServer");
-	if (!WaxServer) [NSException raise:@"Wax Server Error" format:@"Could load Wax Server"];
-	
-	[WaxServer start];
-}
-
-void wax_end() {
-    [wax_gc stop];
-    lua_close(wax_currentLuaState());
-    currentL = 0;
-}
+//void wax_startWithServer() {		
+//	wax_setup();
+//	[wax_server class]; // You need to load the class somehow via the wax.framework
+//	lua_State *L = wax_currentLuaState();
+//	
+//	// Load all the wax lua scripts
+//    if (luaL_dofile(L, WAX_SCRIPTS_DIR "/scripts/wax/init.lua") != 0) {
+//        fprintf(stderr,"Fatal error opening wax scripts: %s\n", lua_tostring(L,-1));
+//    }
+//	
+//	Class WaxServer = objc_getClass("WaxServer");
+//	if (!WaxServer) [NSException raise:@"Wax Server Error" format:@"Could load Wax Server"];
+//	
+//	[WaxServer start];
+//}
+//
+//void wax_end() {
+//    [wax_gc stop];
+//    lua_close(wax_currentLuaState());
+//    currentL = 0;
+//}
 
 static void addGlobals(lua_State *L) {
     lua_getglobal(L, "wax");

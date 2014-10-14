@@ -67,7 +67,7 @@ wax_instance_userdata *wax_instance_create(lua_State *L, id instance, BOOL isCla
     wax_instance_pushUserdata(L, instance);
    
     if (lua_isnil(L, -1)) {
-        wax_log(LOG_GC, @"Creating %@ for %@(%p)", isClass ? @"class" : @"instance", [instance class], instance);
+        //wax_log(LOG_GC, @"Creating %@ for %@(%p)", isClass ? @"class" : @"instance", [instance class], instance);
         lua_pop(L, 1); // pop nil stack
     }
     else {
@@ -216,8 +216,9 @@ BOOL wax_instance_pushFunction(lua_State *L, id self, SEL selector) {
     
     wax_instance_pushUserdata(L, self);
     if (lua_isnil(L, -1)) {
-        END_STACK_MODIFY(L, 0)
-        return NO; // userdata doesn't exist
+//        END_STACK_MODIFY(L, 0)
+//      return NO; // userdata doesn't exist
+        wax_instance_userdata *data = wax_instance_create(L, self, NO);
     }
     
     lua_getfenv(L, -1);
@@ -772,7 +773,39 @@ static BOOL overrideMethod(lua_State *L, wax_instance_userdata *instanceUserdata
         }
 		
 		id metaclass = objc_getMetaClass(object_getClassName(klass));		
-		success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
+		//success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
+        
+        // Optimized by canyingwushang - start
+        IMP instImp = class_respondsToSelector(klass, selector) ? class_getMethodImplementation(klass, selector) : NULL;
+        IMP metaImp = class_respondsToSelector(metaclass, selector) ? class_getMethodImplementation(metaclass, selector) : NULL;
+        if(instImp) {
+            // original selector is reserved in ORIGxxxx
+            IMP prevImp = class_replaceMethod(klass, selector, imp, typeDescription);
+            const char *selectorName = sel_getName(selector);
+            char newSelectorName[strlen(selectorName) + 10];
+            strcpy(newSelectorName, "ORIG");
+            strcat(newSelectorName, selectorName);
+            SEL newSelector = sel_getUid(newSelectorName);
+            if(!class_respondsToSelector(klass, newSelector)) {
+                class_addMethod(klass, newSelector, prevImp, typeDescription);
+            }
+            success = YES;
+        } else if(metaImp) {
+            IMP prevImp = class_replaceMethod(metaclass, selector, imp, typeDescription);
+            const char *selectorName = sel_getName(selector);
+            char newSelectorName[strlen(selectorName) + 10];
+            strcpy(newSelectorName, "ORIG");
+            strcat(newSelectorName, selectorName);
+            SEL newSelector = sel_getUid(newSelectorName);
+            if(!class_respondsToSelector(metaclass, newSelector)) {
+                class_addMethod(metaclass, newSelector, prevImp, typeDescription);
+            }
+            success = YES;
+        } else {
+            // add to both instance and class method
+            success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
+        }
+        // Optimized by canyingwushang - end
 		
         if (returnType) free(returnType);                
     }
@@ -800,10 +833,42 @@ static BOOL overrideMethod(lua_State *L, wax_instance_userdata *instanceUserdata
 			IMP imp = (IMP)WAX_METHOD_NAME(id);
 			id metaclass = objc_getMetaClass(object_getClassName(klass));
 
-			success = success &&
-				class_addMethod(klass, possibleSelectors[i], imp, typeDescription) &&
-				class_addMethod(metaclass, possibleSelectors[i], imp, typeDescription);
+            // Optimized by canyingwushang - start
+            
+			//success = success && class_addMethod(klass, possibleSelectors[i], imp, typeDescription) && class_addMethod(metaclass, possibleSelectors[i], imp, typeDescription);
+            
+            IMP instImp = class_respondsToSelector(klass, selector) ? class_getMethodImplementation(klass, selector) : NULL;
+            IMP metaImp = class_respondsToSelector(metaclass, selector) ? class_getMethodImplementation(metaclass, selector) : NULL;
+            if(instImp) {
+                // original selector is reserved in ORIGxxxx
+                IMP prevImp = class_replaceMethod(klass, selector, imp, typeDescription);
+                const char *selectorName = sel_getName(selector);
+                char newSelectorName[strlen(selectorName) + 10];
+                strcpy(newSelectorName, "ORIG");
+                strcat(newSelectorName, selectorName);
+                SEL newSelector = sel_getUid(newSelectorName);
+                if(!class_respondsToSelector(klass, newSelector)) {
+                    class_addMethod(klass, newSelector, prevImp, typeDescription);
+                }
+                success = YES;
+            } else if(metaImp) {
+                IMP prevImp = class_replaceMethod(metaclass, selector, imp, typeDescription);
+                const char *selectorName = sel_getName(selector);
+                char newSelectorName[strlen(selectorName) + 10];
+                strcpy(newSelectorName, "ORIG");
+                strcat(newSelectorName, selectorName);
+                SEL newSelector = sel_getUid(newSelectorName);
+                if(!class_respondsToSelector(metaclass, newSelector)) {
+                    class_addMethod(metaclass, newSelector, prevImp, typeDescription);
+                }
+                success = YES;
+            } else {
+                // add to both instance and class method
+                success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
+            }
 			
+            // Optimized by canyingwushang - end
+            
 			free(typeDescription);
 		}
     }

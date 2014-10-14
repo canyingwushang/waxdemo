@@ -1,5 +1,6 @@
 setmetatable(_G, {
   __index = function(self, key)
+    print(key)
     local class = wax.class[key]
     if class then self[key] = class end -- cache it for future use
 

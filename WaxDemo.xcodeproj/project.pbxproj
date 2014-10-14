@@ -76,6 +76,8 @@
 		07602424198A7ADD00961998 /* settings_feedback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0760241B198A7ADD00961998 /* settings_feedback@2x.png */; };
 		07602425198A7ADD00961998 /* settings_rate.png in Resources */ = {isa = PBXBuildFile; fileRef = 0760241C198A7ADD00961998 /* settings_rate.png */; };
 		07602426198A7ADD00961998 /* settings_rate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0760241D198A7ADD00961998 /* settings_rate@2x.png */; };
+		D430FA1A19ECF96000214601 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = D430FA1919ECF96000214601 /* init.lua */; };
+		D430FA1E19ED0D0400214601 /* CKMainViewControllerPatch.lua in Resources */ = {isa = PBXBuildFile; fileRef = D430FA1C19ED0D0400214601 /* CKMainViewControllerPatch.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,8 +232,6 @@
 		076023B8198A76D100961998 /* wax_struct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wax_struct.h; sourceTree = "<group>"; };
 		076023B9198A76D100961998 /* wax_struct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = wax_struct.m; sourceTree = "<group>"; };
 		0760240E198A771200961998 /* ProtocolLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolLoader.h; sourceTree = SOURCE_ROOT; };
-		07602410198A777900961998 /* run.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = run.lua; sourceTree = "<group>"; };
-		07602413198A789D00961998 /* CKLuaViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CKLuaViewController.lua; sourceTree = "<group>"; };
 		07602415198A7ADD00961998 /* main_view_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_view_bg.png; sourceTree = "<group>"; };
 		07602416198A7ADD00961998 /* settings_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_about.png; sourceTree = "<group>"; };
 		07602417198A7ADD00961998 /* settings_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_about@2x.png"; sourceTree = "<group>"; };
@@ -241,6 +241,9 @@
 		0760241B198A7ADD00961998 /* settings_feedback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_feedback@2x.png"; sourceTree = "<group>"; };
 		0760241C198A7ADD00961998 /* settings_rate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_rate.png; sourceTree = "<group>"; };
 		0760241D198A7ADD00961998 /* settings_rate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_rate@2x.png"; sourceTree = "<group>"; };
+		D430FA1519EBD3D600214601 /* CKLuaViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CKLuaViewController.lua; sourceTree = "<group>"; };
+		D430FA1919ECF96000214601 /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
+		D430FA1C19ED0D0400214601 /* CKMainViewControllerPatch.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CKMainViewControllerPatch.lua; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,10 +328,10 @@
 		07602323198A76D100961998 /* wax */ = {
 			isa = PBXGroup;
 			children = (
+				D430FA1419EBD3D600214601 /* plugins */,
 				07602324198A76D100961998 /* bin */,
 				07602328198A76D100961998 /* lib */,
 				0760240E198A771200961998 /* ProtocolLoader.h */,
-				0760240F198A777900961998 /* scripts */,
 			);
 			path = wax;
 			sourceTree = SOURCE_ROOT;
@@ -600,13 +603,14 @@
 			path = luaspec;
 			sourceTree = "<group>";
 		};
-		0760240F198A777900961998 /* scripts */ = {
+		D430FA1419EBD3D600214601 /* plugins */ = {
 			isa = PBXGroup;
 			children = (
-				07602410198A777900961998 /* run.lua */,
-				07602413198A789D00961998 /* CKLuaViewController.lua */,
+				D430FA1919ECF96000214601 /* init.lua */,
+				D430FA1519EBD3D600214601 /* CKLuaViewController.lua */,
+				D430FA1C19ED0D0400214601 /* CKMainViewControllerPatch.lua */,
 			);
-			path = scripts;
+			path = plugins;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -673,8 +677,10 @@
 				07602424198A7ADD00961998 /* settings_feedback@2x.png in Resources */,
 				0760241F198A7ADD00961998 /* settings_about.png in Resources */,
 				07602420198A7ADD00961998 /* settings_about@2x.png in Resources */,
+				D430FA1E19ED0D0400214601 /* CKMainViewControllerPatch.lua in Resources */,
 				0760241E198A7ADD00961998 /* main_view_bg.png in Resources */,
 				076022F4198A747700961998 /* InfoPlist.strings in Resources */,
+				D430FA1A19ECF96000214601 /* init.lua in Resources */,
 				07602426198A7ADD00961998 /* settings_rate@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -906,6 +912,7 @@
 				0760231A198A747700961998 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

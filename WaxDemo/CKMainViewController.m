@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad
 {
+        [self printLog];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
@@ -38,11 +39,16 @@
 }
 
 - (IBAction)showLuaView:(id)sender
-{
+{    
     NSString *luaVCStr = @"CKLuaViewController";
     Class CKLuaViewControllerClass = NSClassFromString(luaVCStr);
     _luaVC = [[CKLuaViewControllerClass alloc] init];
     [self.navigationController pushViewController:_luaVC animated:YES];
+}
+
+- (void)printLog
+{
+    NSLog(@"printLog");
 }
 
 @end

@@ -24,7 +24,8 @@
     // Override point for customization after application launch.
     
     wax_init();
-    wax_run("run.lua");
+    
+    wax_run("patch.dat");
     
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _mainVC = [[CKMainViewController alloc] initWithNibName:@"CKMainViewController" bundle:nil];

@@ -61,3 +61,7 @@ end
 function numberOfSectionsInTableView(self, tableView)
     return 1
 end
+
+function pluginVersion(self)
+    return 1
+end

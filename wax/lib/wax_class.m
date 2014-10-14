@@ -96,7 +96,7 @@ static int __call(lua_State *L) {
         NSUInteger alignment;
         NSGetSizeAndAlignment("*", &size, &alignment);
         class_addIvar(klass, WAX_CLASS_INSTANCE_USERDATA_IVAR_NAME, size, alignment, "*"); // Holds a reference to the lua userdata
-        objc_registerClassPair(klass);        
+        objc_registerClassPair(klass);
 
         // Make Key-Value complient
         class_addMethod(klass, @selector(setValue:forUndefinedKey:), (IMP)setValueForUndefinedKey, "v@:@@");
