@@ -71,7 +71,7 @@ wax_instance_userdata *wax_instance_create(lua_State *L, id instance, BOOL isCla
         lua_pop(L, 1); // pop nil stack
     }
     else {
-        wax_log(LOG_GC, @"Found existing userdata %@ for %@(%p)", isClass ? @"class" : @"instance", [instance class], instance);
+        //wax_log(LOG_GC, @"Found existing userdata %@ for %@(%p)", isClass ? @"class" : @"instance", [instance class], instance);
         return lua_touserdata(L, -1);
     }
     
@@ -81,6 +81,7 @@ wax_instance_userdata *wax_instance_create(lua_State *L, id instance, BOOL isCla
     instanceUserdata->isClass = isClass;
     instanceUserdata->isSuper = nil;
 	instanceUserdata->actAsSuper = NO;
+    instanceUserdata->waxRetain = NO;
      
     if (!isClass) {
         //wax_log(LOG_GC, @"Retaining %@ for %@(%p -> %p)", isClass ? @"class" : @"instance", [instance class], instance, instanceUserdata);
@@ -129,6 +130,7 @@ wax_instance_userdata *wax_instance_createSuper(lua_State *L, wax_instance_userd
     superInstanceUserdata->instance = instanceUserdata->instance;
     superInstanceUserdata->isClass = instanceUserdata->isClass;
 	superInstanceUserdata->actAsSuper = YES;
+    superInstanceUserdata->waxRetain = NO;
 	
 	// isSuper not only stores whether the class is a super, but it also contains the value of the next superClass
 	if (instanceUserdata->isSuper) {
@@ -216,9 +218,14 @@ BOOL wax_instance_pushFunction(lua_State *L, id self, SEL selector) {
     
     wax_instance_pushUserdata(L, self);
     if (lua_isnil(L, -1)) {
-//        END_STACK_MODIFY(L, 0)
-//      return NO; // userdata doesn't exist
+        // TODO:
+        // quick and dirty solution to let obj-c call directly into lua
+        // cause a obj-c leak, should we release it later?
         wax_instance_userdata *data = wax_instance_create(L, self, NO);
+        data->waxRetain = YES;
+//        [self release];
+//        END_STACK_MODIFY(L, 0)
+//        return NO; // userdata doesn't exist
     }
     
     lua_getfenv(L, -1);
@@ -325,8 +332,7 @@ static int __newindex(lua_State *L) {
     wax_instance_userdata *instanceUserdata = (wax_instance_userdata *)luaL_checkudata(L, 1, WAX_INSTANCE_METATABLE_NAME);
     
     // If this already exists in a protocol, or superclass make sure it will call the lua functions
-    int luaType = lua_type(L, 3);
-    if (instanceUserdata->isClass && luaType == LUA_TFUNCTION) {
+    if (instanceUserdata->isClass && lua_type(L, 3) == LUA_TFUNCTION) {
         overrideMethod(L, instanceUserdata);
     }
     
@@ -366,8 +372,7 @@ static int __gc(lua_State *L) {
 
 static int __tostring(lua_State *L) {
     wax_instance_userdata *instanceUserdata = (wax_instance_userdata *)luaL_checkudata(L, 1, WAX_INSTANCE_METATABLE_NAME);
-    const char * str = [[NSString stringWithFormat:@"(%p => %p) %@", instanceUserdata, instanceUserdata->instance, instanceUserdata->instance] UTF8String];
-    lua_pushstring(L, str);
+    lua_pushstring(L, [[NSString stringWithFormat:@"(%p => %p) %@", instanceUserdata, instanceUserdata->instance, instanceUserdata->instance] UTF8String]);
     
     return 1;
 }
@@ -393,7 +398,6 @@ static int methods(lua_State *L) {
     
     for (int i = 0; i < count; i++) {
         Method method = methods[i];
-        printf("=====%s\n", sel_getName(method_getName(method)));
         lua_pushstring(L, sel_getName(method_getName(method)));
         lua_rawseti(L, -2, i + 1);
     }
@@ -772,10 +776,10 @@ static BOOL overrideMethod(lua_State *L, wax_instance_userdata *instanceUserdata
                 break;
         }
 		
-		id metaclass = objc_getMetaClass(object_getClassName(klass));		
-		//success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
-        
-        // Optimized by canyingwushang - start
+        // OVERRIDE if exists
+		id metaclass = objc_getMetaClass(object_getClassName(klass));
+//        success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
+
         IMP instImp = class_respondsToSelector(klass, selector) ? class_getMethodImplementation(klass, selector) : NULL;
         IMP metaImp = class_respondsToSelector(metaclass, selector) ? class_getMethodImplementation(metaclass, selector) : NULL;
         if(instImp) {
@@ -805,9 +809,8 @@ static BOOL overrideMethod(lua_State *L, wax_instance_userdata *instanceUserdata
             // add to both instance and class method
             success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
         }
-        // Optimized by canyingwushang - end
-		
-        if (returnType) free(returnType);                
+        
+        if (returnType) free(returnType);
     }
     else {
 		SEL possibleSelectors[2];
@@ -833,9 +836,8 @@ static BOOL overrideMethod(lua_State *L, wax_instance_userdata *instanceUserdata
 			IMP imp = (IMP)WAX_METHOD_NAME(id);
 			id metaclass = objc_getMetaClass(object_getClassName(klass));
 
-            // Optimized by canyingwushang - start
-            
-			//success = success && class_addMethod(klass, possibleSelectors[i], imp, typeDescription) && class_addMethod(metaclass, possibleSelectors[i], imp, typeDescription);
+//            success = class_addMethod(klass, possibleSelectors[i], imp, typeDescription) &&
+//				class_addMethod(metaclass, possibleSelectors[i], imp, typeDescription);
             
             IMP instImp = class_respondsToSelector(klass, selector) ? class_getMethodImplementation(klass, selector) : NULL;
             IMP metaImp = class_respondsToSelector(metaclass, selector) ? class_getMethodImplementation(metaclass, selector) : NULL;
@@ -867,8 +869,6 @@ static BOOL overrideMethod(lua_State *L, wax_instance_userdata *instanceUserdata
                 success = class_addMethod(klass, selector, imp, typeDescription) && class_addMethod(metaclass, selector, imp, typeDescription);
             }
 			
-            // Optimized by canyingwushang - end
-            
 			free(typeDescription);
 		}
     }
